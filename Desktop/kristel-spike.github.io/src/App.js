@@ -1,17 +1,13 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import NavbarBrand from 'react-bootstrap/NavbarBrand';
+import Nav from 'react-bootstrap/Nav';
 //import About from '/components/About';
 //import Contact from '/components/Contact';
 //import Works from '/components/Works';
 //import Home from '/components/Home';
-import{
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom" 
-import NavbarBrand from 'react-bootstrap/NavbarBrand';
+import{BrowserRouter as Router, Switch, Route, Link} from "react-router-dom" 
 
 class App extends React.Component{
   constructor(props){
@@ -39,35 +35,28 @@ class App extends React.Component{
       }
     }
   }
+
   render(){
     return (
-
       <Router>
         <Container className="p-0" fluid={true}>
-          <Navbar className="border-bottom">
+
+          <Navbar className="border-bottom" bg="transparent" expan="lg">
             <Navbar.Brand>Kristel B</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbar-toggle"/>
+
+            <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
             <Navbar.Collapse id='navbar-toggle'>
-            <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About Me</Link>
-              </li>
-              <li>
-                <Link to="/works">Works</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact Me</Link>
-              </li>
-            </ul>
-          </nav>
+              <Nav className="ml-auto">
+                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/about">About Me</Link>
+                <Link className="nav-link" to="/works">Works</Link>
+                <Link className="nav-link" to="/contact">Contact Me</Link>
+              </Nav>
             </Navbar.Collapse>
           </Navbar>
         </Container>
-        <Switch>
+
+        {/* <Switch>
             <Route path="/about">
               <About />
             </Route>
@@ -80,31 +69,13 @@ class App extends React.Component{
             <Route path="/">
               <Home />
             </Route>
-          </Switch>
+        </Switch> */}
 
       </Router>
     );
   }
 }
   
-          { /* <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About Me</Link>
-              </li>
-              <li>
-                <Link to="/works">Works</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact Me</Link>
-              </li>
-            </ul>
-          </nav> */ }
-  
-      
 
     function Home() {
       return <h2>Home</h2>
