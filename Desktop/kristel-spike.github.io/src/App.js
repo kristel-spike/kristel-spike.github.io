@@ -1,4 +1,6 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 //import About from '/components/About';
 //import Contact from '/components/Contact';
 //import Works from '/components/Works';
@@ -9,6 +11,7 @@ import{
   Route,
   Link
 } from "react-router-dom" 
+import NavbarBrand from 'react-bootstrap/NavbarBrand';
 
 class App extends React.Component{
   constructor(props){
@@ -40,9 +43,12 @@ class App extends React.Component{
     return (
 
       <Router>
-        <div>
-  
-          <nav>
+        <Container className="p-0" fluid={true}>
+          <Navbar className="border-bottom">
+            <Navbar.Brand>Kristel B</Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbar-toggle"/>
+            <Navbar.Collapse id='navbar-toggle'>
+            <nav>
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -58,8 +64,10 @@ class App extends React.Component{
               </li>
             </ul>
           </nav>
-  
-          <Switch>
+            </Navbar.Collapse>
+          </Navbar>
+        </Container>
+        <Switch>
             <Route path="/about">
               <About />
             </Route>
@@ -73,12 +81,30 @@ class App extends React.Component{
               <Home />
             </Route>
           </Switch>
-  
-        </div>
+
       </Router>
     );
   }
 }
+  
+          { /* <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About Me</Link>
+              </li>
+              <li>
+                <Link to="/works">Works</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact Me</Link>
+              </li>
+            </ul>
+          </nav> */ }
+  
+      
 
     function Home() {
       return <h2>Home</h2>
