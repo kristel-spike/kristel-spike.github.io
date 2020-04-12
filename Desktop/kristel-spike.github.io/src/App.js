@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import NavbarBrand from 'react-bootstrap/NavbarBrand';
 import Nav from 'react-bootstrap/Nav';
+
+import Footer from './components/Footer';
 //import About from '/components/About';
 //import Contact from '/components/Contact';
 //import Works from '/components/Works';
@@ -54,6 +56,8 @@ class App extends React.Component{
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+
+          <Footer/>
         </Container>
 
         {/* <Switch>
