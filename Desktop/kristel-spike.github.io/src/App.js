@@ -8,50 +8,77 @@ import{
   Switch,
   Route,
   Link
-} from "react-router-dom"
+} from "react-router-dom" 
 
-function App() {
-  return (
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      title: "Kristel B",
+      headerLinks:[
+        {title: 'Home', path: '/'},
+        {title: 'About', path: '/about'},
+        {title: 'Works', path: '/works'},
+        {title: 'Contact', path: '/contact'}
+      ],
+      home: {
+        title: 'Hello World!',
+        subtitle: 'Welcome to the world of Kristel. Please feel free to explore my portfolio!'
+      },
+      about: {
+        title: 'About Me'
+      },
+      works: {
+        title: 'Works'
+      },
+      contact: {
+        title: 'Get In Touch'
+      }
+    }
+  }
+  render(){
+    return (
 
-    <Router>
-      <div>
-
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About Me</Link>
-            </li>
-            <li>
-              <Link to="/works">Works</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact Me</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/works">
-            <Works />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-
-      </div>
-    </Router>
-  );
-  }    
+      <Router>
+        <div>
+  
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About Me</Link>
+              </li>
+              <li>
+                <Link to="/works">Works</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact Me</Link>
+              </li>
+            </ul>
+          </nav>
+  
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/works">
+              <Works />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+  
+        </div>
+      </Router>
+    );
+  }
+}
 
     function Home() {
       return <h2>Home</h2>
