@@ -1,15 +1,16 @@
 import React from 'react';
+import{BrowserRouter as Router, Switch, Route, Link} from "react-router-dom" 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import NavbarBrand from 'react-bootstrap/NavbarBrand';
 import Nav from 'react-bootstrap/Nav';
 
 import Footer from './components/Footer';
-//import About from '/components/About';
-//import Contact from '/components/Contact';
-//import Works from '/components/Works';
-//import Home from '/components/Home';
-import{BrowserRouter as Router, Switch, Route, Link} from "react-router-dom" 
+import HomePage from './pages/HomePage';
+import AboutMe from './pages/AboutMe';
+import Works from './pages/Works';
+import Contact from './pages/Contact';
+
 
 class App extends React.Component{
   constructor(props){
@@ -24,7 +25,7 @@ class App extends React.Component{
       ],
       home: {
         title: 'Hello World!',
-        subtitle: 'Welcome to the world of Kristel. Please feel free to explore my portfolio!'
+        subTitle: 'Welcome to the world of Kristel. Please feel free to explore my portfolio!'
       },
       about: {
         title: 'About Me'
@@ -56,20 +57,12 @@ class App extends React.Component{
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/works">
-              <Works />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-        </Switch>
+            <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.about.subTitle} />} /> 
+            <Route path="/about" exact render={()=> <AboutMe title={this.state.about.title} />} />
+            <Route path="/works" exact render={() => <Works title={this.state.works.title} />} />
+            <Route path="/contact" exact render={() => <Contact title={this.state.contact.title} />} />
+            
+        
           <Footer/>
         </Container> 
 
@@ -79,7 +72,7 @@ class App extends React.Component{
 }
   
 
-    function Home() {
+   {/* function Home() {
       return <h2>Home</h2>
     }
 
@@ -97,7 +90,7 @@ class App extends React.Component{
        //<Home />
        //<About />
        //<Works />
-       //<Contact />
+  //<Contact /> */}
 
 
 export default App;
