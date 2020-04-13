@@ -7,7 +7,7 @@ import Tile from '../components/Tile';
 
 import spike from '../assets/images/spike.jpg';
 import circles from '../assets/images/circles.png';
-import phone from '../assets/images/phone.jpg';
+import question from '../assets/images/question.jpg';
 
 class Carousel extends React.Component{
     constructor(props){
@@ -34,7 +34,7 @@ class Carousel extends React.Component{
                     id: 2,
                     title: 'Contact Me',
                     subTitle: 'Get in Touch!',
-                    imgSrc: phone,
+                    imgSrc: question,
                     link: '',
                     selected: false 
                 }
