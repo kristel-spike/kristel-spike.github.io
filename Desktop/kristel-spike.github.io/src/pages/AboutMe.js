@@ -8,7 +8,8 @@ function AboutMe(props){
         <div>
             <Title title={props.title} subTitle={props.subTitle} />
             <Content>
-                Hellooo
+                <p>WHAT IT DO BAYBEE</p>
+                <a href='../src/assets/resume.pdf' download>click to download</a>
             </Content>
         </div>
     );
