@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.k-tile{
+  margin: 20px
+}
+
+.k-tile-image {
+  border-radius: 10px;
+  width: 300px;
+  height: 480px;
+  box-shadow: 0px 0px 3px 1px #ccc;
+}
+
+.k-tile-info{
+  margin-top: 10px;
+  min-height: 100px
+}
+
+.k-tile-title{
+  font-size: 30px;
+  margin: 0px;
+}
+
+.k-tile-sub-title{
+  font-size: 16px;
+  margin: 0px;
+}

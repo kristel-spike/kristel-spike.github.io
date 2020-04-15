@@ -2,7 +2,7 @@ import React from 'react';
 import{BrowserRouter as Router, Switch, Route, Link} from "react-router-dom" 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import NavbarBrand from 'react-bootstrap/NavbarBrand';
+//import NavbarBrand from 'react-bootstrap/NavbarBrand';
 import Nav from 'react-bootstrap/Nav';
 
 import Footer from './components/Footer';
@@ -70,27 +70,5 @@ class App extends React.Component{
     );
   }
 }
-  
-
-   {/* function Home() {
-      return <h2>Home</h2>
-    }
-
-    function About() {
-      return<h2>About Me</h2>
-    }
-
-    function Works() {
-      return<h2>Works</h2>
-    }
-
-    function Contact() {
-      return<h2>Contact Me</h2>
-    }
-       //<Home />
-       //<About />
-       //<Works />
-  //<Contact /> */}
-
 
 export default App;

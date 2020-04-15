@@ -19,7 +19,7 @@ class Carousel extends React.Component{
                     title: 'About Me',
                     subTitle: 'Who is she???',
                     imgSrc: spike,
-                    link: '',
+                    link: '/about',
                     selected: false
                 },
                 {
@@ -27,7 +27,7 @@ class Carousel extends React.Component{
                     title: 'Works',
                     subTitle: 'GitHub, Multimedia Design, Art',
                     imgSrc: circles,
-                    link: 'https://www.behance.net/kristelb',
+                    link: '/works',
                     selected: false 
                 },
                 {
@@ -35,7 +35,7 @@ class Carousel extends React.Component{
                     title: 'Contact Me',
                     subTitle: 'Get in Touch!',
                     imgSrc: question,
-                    link: '',
+                    link: '/contact',
                     selected: false 
                 }
             ]
@@ -43,6 +43,7 @@ class Carousel extends React.Component{
     }
     
     handleTileClick = (id, tile) => {
+
         let items = [...this.state.items];
 
         items[id].selected = items[id].selected ? false : true;
@@ -60,7 +61,7 @@ class Carousel extends React.Component{
 
     makeItems = (items) => {
         return items.map(item => {
-            return <Tile item={item} onClick={(e => this.handleTileClick(item.id , e))} key={item.id} />    
+            return <Tile item={item} click={(e => this.handleTileClick(item.id , e))} key={item.id} />    
         })
     }
 
