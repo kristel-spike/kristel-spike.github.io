@@ -1,7 +1,17 @@
 import React from 'react';
+import{BrowserRouter as Router, Switch, Route, Link} from "react-router-dom" 
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Navbar from 'react-bootstrap/Navbar';
+//import NavbarBrand from 'react-bootstrap/NavbarBrand';
+import Nav from 'react-bootstrap/Nav';
+
+import HomePage from '../pages/HomePage';
+import AboutMe from '../pages/AboutMe';
+import Works from '../pages/Works';
+import Contact from '../pages/Contact';
+import Logo from '../assets/images/k.png';
 
 function Footer() {
     return(

@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import AboutMe from './pages/AboutMe';
 import Works from './pages/Works';
 import Contact from './pages/Contact';
+import Logo from './assets/images/k.png';
 
 
 class App extends React.Component{
@@ -40,13 +41,22 @@ class App extends React.Component{
     }
   }
 
+  Logo() {
+    let styles = {
+      width: '20px',
+      height: '20px'
+    }
+  }
+
   render(){
     return (
       <Router>
         <Container className="p-0" fluid={true}>
 
-          <Navbar className="border-bottom" bg="red" expand="lg" >
-            <Navbar.Brand>Kristel B</Navbar.Brand>
+          <Navbar expand="lg" >
+            <Navbar.Brand>
+              <img src={Logo} alt="Logo" className="nav-logo"></img>
+            </Navbar.Brand>
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
             <Navbar.Collapse id='navbar-toggle'>
@@ -58,7 +68,7 @@ class App extends React.Component{
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-            <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} />} /> 
+            <Route className="nav-style" path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} />} /> 
             <Route path="/about" exact render={()=> <AboutMe title={this.state.about.title} subTitle={this.state.about.subTitle} />} />
             <Route path="/works" exact render={() => <Works title={this.state.works.title} />} />
             <Route path="/contact" exact render={() => <Contact title={this.state.contact.title} />} />

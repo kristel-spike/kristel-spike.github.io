@@ -2,13 +2,18 @@ import React from 'react';
 // import{BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
 import Title from '../components/Title';
 import Content from '../components/Content';
+import Form from '../components/Form'
+import Logo from '../assets/images/k.png';
 
-import Form from 'react-bootstrap/Form'
+//import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class Contact extends React.Component{
 
-   constructor(props){
+    /* constructor(props){
        super(props);
        this.state = {
         name: '',
@@ -17,9 +22,9 @@ class Contact extends React.Component{
         disable: false,
         emailSent: null,
         }
-    }
+    } 
 
-    handleChange=(event) => {
+     handleChange=(event) => {
         const target = event.target;
         const value = event.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -27,22 +32,33 @@ class Contact extends React.Component{
         this.setState({
             [name]:value
         })
-    }
+    } 
 
     handleSubmit = (event) => {
         event.preventDefault();
 
         this.setState({
             disabled: true
-        })
-    }
+        }) 
+     */ 
 
     render(){
         return(
             <div>
                 <Title title={this.props.title}/>
-
-                <Content>
+                
+                <Container>
+                    <Row>
+                        <Col>
+                            <Form/>
+                        </Col>
+                        <Col></Col>
+                        <Col>
+                            <img src={Logo} alt="Logo" className="logo"></img>
+                        </Col>
+                    </Row>
+                </Container>
+                { /* <Content>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group className="border border-dark">
                             <Form.Label htmlFor="full-name">Full Name</Form.Label>
@@ -64,7 +80,7 @@ class Contact extends React.Component{
                         {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
                         {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
                     </Form>
-                </Content>
+                </Content> */}
             </div>
         )
     }

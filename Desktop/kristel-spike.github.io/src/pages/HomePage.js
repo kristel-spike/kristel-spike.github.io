@@ -7,6 +7,7 @@ function HomePage(props){
     return(
         <div>
             <Title title={props.title} subTitle={props.subTitle}/>
+            <h1>Click a tile for more information</h1>
             <Carousel/>
         </div> 
     );

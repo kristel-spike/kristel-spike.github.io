@@ -12,8 +12,13 @@ function AboutMe(props){
             <Content>
                 <p>Hello! My name is Kristel.</p>
                 <p>I am currently a Digital Marketer/Marketing Communications Associate employed at Computer Resources of America, a managed services provider and IT consultation business headquartered in Manhattan.</p>
+                <p>My skill areas in digital marketing includes Search Engine Optimization, Google Analytics, Google Adwords, Customer Relations Management, Website Design and Development, Social Media Management, and Brand Management.</p>
                 <p>I am also currently finishing my Bachelor's of Science degree in Computer Graphics and Imaging at Lehman College.</p>
-                <DownloadLink label="Save" filename="resume.pdf" exportFile={()=> "My cached data"} />
+                <p>My skills in multimedia design and art includes Adobe Photoshop, InDesign, Illustrator, After Effects, Premiere Pro, and Bridge, along with Cinema 4D, and other digital design platforms such as Canva and Procreate. I also draw as a hobby.</p>
+                { // <DownloadLink label="DOWNLOAD" filename="resume.pdf" exportFile={() => "My cached data"}></DownloadLink> 
+                // <button type="button">Download a copy of my resume.</button> 
+    }
+                <a href="resume.pdf" download> Download a copy of my resume.</a>
             </Content>
         </div>
     );

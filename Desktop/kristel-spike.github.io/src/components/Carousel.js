@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Tile from '../components/Tile';
 
 import spike from '../assets/images/spike.jpg';
-import circles from '../assets/images/circles.png';
-import question from '../assets/images/question.jpg';
+import circles from '../assets/images/circles.jpg';
+import contact from '../assets/images/contact.jpg';
 
 class Carousel extends React.Component{
     constructor(props){
@@ -34,10 +34,10 @@ class Carousel extends React.Component{
                     id: 2,
                     title: 'Contact Me',
                     subTitle: 'Get in Touch!',
-                    imgSrc: question,
+                    imgSrc: contact,
                     link: '/contact',
                     selected: false 
-                }
+                },
             ]
         }
     }
