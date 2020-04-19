@@ -9,7 +9,7 @@ function Works(props){
     return(
         <div>
             <Title className="title-border" title={props.title} subTitle={props.subTitle}/>
-            <h2>Hello World, here's some stuff I did! Just click a tile for more Info.</h2>
+            <h2 className="header-styles">Hello World, here's some stuff I did! Just click a tile for more Info.</h2>
             <Projects/>
         </div>
     );

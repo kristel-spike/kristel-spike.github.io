@@ -52,7 +52,7 @@ class Contact extends React.Component{
                         <Col>
                             <Form/>
                         </Col>
-                        <Col></Col>
+                        
                         <Col>
                             <img src={Logo} alt="Logo" className="logo"></img>
                         </Col>

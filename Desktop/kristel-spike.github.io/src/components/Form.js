@@ -62,6 +62,7 @@ class Form extends Component {
                 <br></br>
                 <br></br>
                 <label for="message">Message
+                    <br></br>
                     <textarea message={this.state.message} onChange={this.updateMessageLabel} />
                 </label>
 

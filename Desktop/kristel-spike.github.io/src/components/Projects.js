@@ -18,7 +18,7 @@ class Projects extends React.Component{
                 {
                     id: 0,
                     title: 'FavLinks',
-                    subTitle: 'React Project that captures your favorite link and displays it.',
+                    subTitle: 'A React Project I worked on.',
                     imgSrc: github,
                     link: 'https://github.com/kristel-spike/favLinks',
                     selected: false
@@ -26,7 +26,7 @@ class Projects extends React.Component{
                 {
                     id: 1,
                     title: 'Behance',
-                    subTitle: 'Check out my other graphic design work.',
+                    subTitle: 'Check out my other design work.',
                     imgSrc: behance,
                     link: 'https://www.behance.net/kristelb',
                     selected: false 
