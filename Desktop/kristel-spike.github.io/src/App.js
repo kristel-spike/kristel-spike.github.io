@@ -1,17 +1,17 @@
 import React from 'react';
+import{BrowserRouter as Router, Switch, Route, Link} from "react-router-dom" 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-//import About from '/components/About';
-//import Contact from '/components/Contact';
-//import Works from '/components/Works';
-//import Home from '/components/Home';
-import{
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom" 
-import NavbarBrand from 'react-bootstrap/NavbarBrand';
+//import NavbarBrand from 'react-bootstrap/NavbarBrand';
+import Nav from 'react-bootstrap/Nav';
+
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import AboutMe from './pages/AboutMe';
+import Works from './pages/Works';
+import Contact from './pages/Contact';
+import Logo from './assets/images/k.png';
+
 
 class App extends React.Component{
   constructor(props){
@@ -26,10 +26,11 @@ class App extends React.Component{
       ],
       home: {
         title: 'Hello World!',
-        subtitle: 'Welcome to the world of Kristel. Please feel free to explore my portfolio!'
+        subTitle: 'Welcome to the world of Kristel. Please feel free to explore my portfolio!'
       },
       about: {
-        title: 'About Me'
+        title: 'About Me',
+        subTitle: 'Fancy meeting you here. Nice to meet you.'
       },
       works: {
         title: 'Works'
@@ -39,92 +40,46 @@ class App extends React.Component{
       }
     }
   }
+
+  Logo() {
+    let styles = {
+      width: '20px',
+      height: '20px'
+    }
+  }
+
   render(){
     return (
-
       <Router>
         <Container className="p-0" fluid={true}>
-          <Navbar className="border-bottom">
-            <Navbar.Brand>Kristel B</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbar-toggle"/>
+
+          <Navbar expand="lg" >
+            <Navbar.Brand>
+              <img src={Logo} alt="Logo" className="nav-logo"></img>
+            </Navbar.Brand>
+
+            <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
             <Navbar.Collapse id='navbar-toggle'>
-            <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About Me</Link>
-              </li>
-              <li>
-                <Link to="/works">Works</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact Me</Link>
-              </li>
-            </ul>
-          </nav>
+              <Nav className="ml-auto">
+                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/about">About Me</Link>
+                <Link className="nav-link" to="/works">Works</Link>
+                <Link className="nav-link" to="/contact">Contact Me</Link>
+              </Nav>
             </Navbar.Collapse>
           </Navbar>
-        </Container>
-        <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/works">
-              <Works />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+            <Route className="nav-style" path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} />} /> 
+            <Route path="/about" exact render={()=> <AboutMe title={this.state.about.title} subTitle={this.state.about.subTitle} />} />
+            <Route path="/works" exact render={() => <Works title={this.state.works.title} />} />
+            <Route path="/contact" exact render={() => <Contact title={this.state.contact.title} />} />
+            
+        
+          <Footer/>
+        </Container> 
 
       </Router>
     );
   }
 }
-  
-          { /* <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About Me</Link>
-              </li>
-              <li>
-                <Link to="/works">Works</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact Me</Link>
-              </li>
-            </ul>
-          </nav> */ }
-  
-      
-
-    function Home() {
-      return <h2>Home</h2>
-    }
-
-    function About() {
-      return<h2>About Me</h2>
-    }
-
-    function Works() {
-      return<h2>Works</h2>
-    }
-
-    function Contact() {
-      return<h2>Contact Me</h2>
-    }
-       //<Home />
-       //<About />
-       //<Works />
-       //<Contact />
-
 
 export default App;
